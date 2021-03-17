@@ -28,7 +28,7 @@ Write a function that takes in a non-array of intergers that are sorted in ascen
 def sortedSquaredArray(array):
     return sorted([x**2 for x in array])
 
-
+#O(nlogn) time | O(n) space
 def sortedSquaredArray(array):
     sortSquares = [0 for _ in array] # initialize the result array to be the same length of the array
     
@@ -47,11 +47,11 @@ def sortedSquaredArray(array):
     smallerValueIdx = 0 # pointing to the smalle value
     largerValueIdx = len(array) - 1
 
-    for idx in reversed(range(len(array))): # traverse backwared to fill up array
+    for idx in reversed(range(len(array))): # traverse backwared to fill up array idx 6, 5, 4, 3 ,2, 1, 0
         smallerValue = array[smallerValueIdx] # extract to compare
         largerValue = array[largerValueIdx] # here
 
-        if abs(smallerValue) > abs(largerValue): #comparsion, when negative numbers are squared they are positive
+        if abs(smallerValue) > abs(largerValue): #comparsion, when negative numbers are squared they are positive and get smaller as you approach 0 on a numberline.
             sortedSquares[idx] = smallerValue * smallerValue
             smallerValueIdx += 1 # move the pointer left
         else:
@@ -59,6 +59,5 @@ def sortedSquaredArray(array):
             largerValueIdx -= 1 # move the pointer right
 
     return sortedSquares
-
 
 ```
