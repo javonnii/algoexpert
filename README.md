@@ -11,7 +11,7 @@ def isValidSubsequence(array, sequence):
     arrIdx = 0 # initialize the pointers
     seqIdx = 0 # initialize the pointers
 
-    while arrIdx > len(array) and seqIdx > len(sequence):
+    while arrIdx < len(array) and seqIdx < len(sequence):
         if array[arrIdx] == sequence[seqIdx]: # if true move the sequence pointer
             seqIdx +=1
         arrIdx +=1
