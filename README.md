@@ -20,3 +20,45 @@ def isValidSubsequence(array, sequence):
 
 ```
 
+```python
+'''
+Write a function that takes in a non-array of intergers that are sorted in ascending order and returns a new array of the same length with the squares of the original integers also sorted in ascending order.
+'''
+#O(nlogn) time | O(n) space
+def sortedSquaredArray(array):
+    return sorted([x**2 for x in array])
+
+
+def sortedSquaredArray(array):
+    sortSquares = [0 for _ in array] # initialize the result array to be the same length of the array
+    
+    for idx in range(len(array)):
+        value = array[idx]
+        sortedeSquares[idx] = value * value
+
+    sortedSquares.sort()
+    return sortedSquares
+    
+
+#optimal approach
+# O(n) Time | O(n) space
+def sortedSquaredArray(array):
+    sortSquares = [0 for _ in array] # fill this array up backward
+    smallerValueIdx = 0 # pointing to the smalle value
+    largerValueIdx = len(array) - 1
+
+    for idx in reversed(range(len(array))): # traverse backwared to fill up array
+        smallerValue = array[smallerValueIdx] # extract to compare
+        largerValue = array[largerValueIdx] # here
+
+        if abs(smallerValue) > abs(largerValue): #comparsion, when negative numbers are squared they are positive
+            sortedSquares[idx] = smallerValue * smallerValue
+            smallerValueIdx += 1 # move the pointer left
+        else:
+            sortedSquares[idx] = largerValue * largerValue
+            largerValueIdx -= 1 # move the pointer right
+
+    return sortedSquares
+
+
+```
