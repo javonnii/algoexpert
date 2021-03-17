@@ -6,7 +6,7 @@ Study Algo to Ace the coding interviews.
 '''
 Given two non-empty arrays of intergers, write a function that determines whether the second array is subsequence of the first one.
 '''
-
+# O(n) time | O(1) space - where n is the length of the array
 def isValidSubsequence(array, sequence):
     arrIdx = 0 # initialize the pointers
     seqIdx = 0 # initialize the pointers
